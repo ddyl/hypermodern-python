@@ -1,0 +1,10 @@
+/.venv
+__pycache__/*
+*.pyc
+.coverage
+.python-version
+dist
+docs/_build/*
+.vscode/*
+.nox/*
+.mypy_cache/*

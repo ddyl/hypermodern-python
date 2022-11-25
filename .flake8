@@ -1,0 +1,14 @@
+[flake8]
+select = ANN,B,B9,BLK,C,D,DAR,E,F,I,S,W
+; Ignore E203 (whitespace before ':') and W503 (line break before binary operator)
+ignore = E203, W503, E501
+max-complexity = 10
+max-line-length = 88
+; Tell flake8-import-order what to consider local imports
+application-import-names = hm_python, tests
+import-order-style = google
+# Ignore assert statements (which we use as test), which are flagged by bandit as assertions are removed when compiling to optimize byte code
+per-file-ignores =
+    tests/*:S101
+    noxfile.py:ANN401
+docstring-convention = google

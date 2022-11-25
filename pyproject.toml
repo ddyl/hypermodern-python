@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "hm-python"
+version = "0.1.0"
+description = "The hypermodern Python project"
+authors = ["Daniel <daniel.dyl.lee@gmail.com>"]
+license="MIT"
+readme = "README.md"
+keywords = ["hypermodern"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^8.0"
+requests = "^2.28.1"
+black = "^22.10.0"
+nox = "^2022.8.7"
+types-mock = "^4.0.15.2"
+types-requests = "^2.28.11.5"
+desert = "^2022.9.22"
+marshmallow = "^3.19.0"
+mock = "^4.0.3"
+
+[tool.poetry.scripts]
+hm-python = "hm_python.console:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["hm_python"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100 # Fail if the coverage is under 100%
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+coverage = {extras = ["toml"], version = "^6.5.0"}
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
+black = "^22.10.0"
+flake8 = "^5.0.4"
+flake8-bandit = "^4.1.1"
+flake8-black = "^0.3.4"
+flake8-bugbear = "^22.10.27"
+flake8-import-order = "^0.18.1"
+safety = "^2.3.1"
+mypy = "^0.991"
+pytype = {version = "^2022.11.18", python = "3.7"}
+mock = "^4.0.3"
+click = "^8.1.3"
+types-requests = "^2.28.11.5"
+types-mock = "^4.0.15.2"
+typeguard = "^2.13.3"
+flake8-annotations = "^2.9.1"
+flake8-docstrings = "^1.6.0"
+darglint = "^1.8.1"
+xdoctest = "^1.1.0"
+sphinx = "^5.3.0"
+sphinx-autodoc-typehints = "^1.19.5"
+codecov = "^2.1.12"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.core.masonry.api"
